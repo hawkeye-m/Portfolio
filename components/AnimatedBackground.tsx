@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const AnimatedBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -27,6 +27,7 @@ const AnimatedBackground = () => {
       speedY: number
 
       constructor() {
+        const canvas = document.querySelector('canvas') as HTMLCanvasElement;
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
         this.size = Math.random() * 5 + 1
@@ -35,6 +36,7 @@ const AnimatedBackground = () => {
       }
 
       update() {
+        const canvas = document.querySelector('canvas') as HTMLCanvasElement;
         this.x += this.speedX
         this.y += this.speedY
 
@@ -64,6 +66,7 @@ const AnimatedBackground = () => {
     }
 
     function animate() {
+      const canvas = document.querySelector('canvas') as HTMLCanvasElement;
       if (!ctx) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       for (let i = 0; i < particles.length; i++) {

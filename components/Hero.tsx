@@ -26,13 +26,13 @@ export default function Hero() {
             className="block"
             animate={floatingAnimation}
           >
-            Hi, I'm Your Name
+            Hi, I&apos;m Your Name
           </motion.span>
           <motion.span
             className="block text-indigo-200"
             animate={floatingAnimation}
           >
-            I'm a Web Developer
+            I&apos;m a Web Developer
           </motion.span>
         </motion.h1>
         <motion.p

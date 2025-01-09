@@ -52,7 +52,7 @@ export default function About() {
             <motion.div variants={foldVariants}>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">My Background</h3>
               <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
-                I'm a passionate web developer with X years of experience. I specialize in creating
+                I&apos;m a passionate web developer with X years of experience. I specialize in creating
                 responsive, user-friendly websites and web applications using modern technologies
                 like React, Next.js, and Tailwind CSS.
               </p>

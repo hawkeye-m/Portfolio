@@ -1,7 +1,17 @@
 import { ExternalLink, Github } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-const projects = [
+
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  live: string;
+};
+
+
+const projects: Project[] = [
   {
     title: 'Project 1',
     description: 'A brief description of Project 1',
@@ -32,9 +42,13 @@ const containerVariants = {
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
-}
+};
 
-const ProjectCard = ({ project, index }) => {
+type ProjectCardProps = {
+  project: Project;
+};
+
+const ProjectCard = ({project}: ProjectCardProps) => {
   return (
     <motion.div
       className="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg perspective-1000"
@@ -48,7 +62,7 @@ const ProjectCard = ({ project, index }) => {
     >
       <div className="p-5">
         <div className="flex-shrink-0">
-          <img className="h-48 w-full object-cover" src={project.image} alt={project.title} />
+          <img className="h-48 w-full object-cover" src={project.image} alt={project.title}/>
         </div>
         <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
         <p className="mt-2 text-base text-gray-500 dark:text-gray-300">{project.description}</p>
@@ -97,7 +111,7 @@ export default function Projects() {
         <motion.div className="mt-20" variants={containerVariants}>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} index={index} />
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
         </motion.div>
