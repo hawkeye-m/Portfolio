@@ -1,5 +1,6 @@
 import { ExternalLink, Github } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 
 type Project = {
@@ -62,7 +63,14 @@ const ProjectCard = ({project}: ProjectCardProps) => {
     >
       <div className="p-5">
         <div className="flex-shrink-0">
-          <img className="h-48 w-full object-cover" src={project.image} alt={project.title}/>
+          <Image 
+          className="h-48 w-full object-cover" 
+          src={project.image} 
+          alt={project.title}
+          height={300}
+          width={400}
+          unoptimized
+          />
         </div>
         <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
         <p className="mt-2 text-base text-gray-500 dark:text-gray-300">{project.description}</p>
